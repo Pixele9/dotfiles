@@ -1,5 +1,4 @@
 set nu rnu
-
 set mouse=a
 set numberwidth=1
 set clipboard=unnamed
@@ -13,6 +12,7 @@ set signcolumn=yes
 set belloff=all
 set noswapfile
 set incsearch
+set ttyfast
 
 syntax on
 set autoindent
@@ -45,7 +45,6 @@ Plug 'mattn/emmet-vim'
 Plug 'elzr/vim-json'
 Plug 'ap/vim-css-color'
 Plug 'mbbill/undotree'
-Plug 'benmills/vimux'
 call plug#end()
 
 let g:oceanic_next_terminal_bold = 1
@@ -91,17 +90,15 @@ nmap <Leader>u :UndotreeToggle<CR>
 
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
-nmap <Leader>x :x<CR>
 nmap <Leader>q! :q!<CR>
+nmap <Leader>x :x<CR>
 
 " run python3 script
 nmap ,l :!python3 %<CR>
 " split vertical
-nmap vs :vsplit<CR>
+nmap <Leader>vs :vsplit<CR>
 " split horizontal
-nmap vh :split<CR>
+nmap <Leader>vh :split<CR>
 " change window size horizontal
 nmap <Leader>h :20winc <<CR>
 nmap <Leader>l :20winc ><CR>
-" vim + tmux <3
-nmap <Leader>vp :VimuxPromptCommand<CR>
