@@ -6,13 +6,18 @@ set showcmd
 set ruler
 set encoding=utf-8
 set showmatch
-set sw=4
+set sw=4 
 set laststatus=2
 set signcolumn=yes
 set belloff=all
 set noswapfile
 set incsearch
 set ttyfast
+" command complation
+set wildmenu
+set wildmode=longest:full,full
+" avoid nerdtree error on child node creation
+set modifiable
 
 syntax on
 set autoindent
@@ -54,6 +59,7 @@ Plug 'ap/vim-css-color'
 Plug 'mbbill/undotree'
 Plug 'valloric/youcompleteme'
 Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx'
 call plug#end()
 
 let g:oceanic_next_terminal_bold = 1
@@ -106,6 +112,7 @@ nmap <Leader>x :x<CR>
 
 " run python3 script
 nmap ,l :!python3 %<CR>
+nmap ,ñ :!node %<CR>
 " split vertical
 nmap <Leader>vs :vsplit<CR>
 " split horizontal
