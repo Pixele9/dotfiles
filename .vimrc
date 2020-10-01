@@ -16,8 +16,6 @@ set ttyfast
 " command complation
 set wildmenu
 set wildmode=longest:full,full
-" avoid nerdtree error on child node creation
-set modifiable
 
 syntax on
 set autoindent
