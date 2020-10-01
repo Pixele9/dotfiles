@@ -16,6 +16,12 @@ set ttyfast
 
 syntax on
 set autoindent
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+set expandtab
 
 
 call plug#begin('~/.vim/plugged')
@@ -35,6 +41,7 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'othree/yajs.vim'
 Plug 'othree/html5.vim'
 Plug 'chemzqm/vim-jsx-improve'
+Plug 'fatih/vim-go'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -45,6 +52,8 @@ Plug 'mattn/emmet-vim'
 Plug 'elzr/vim-json'
 Plug 'ap/vim-css-color'
 Plug 'mbbill/undotree'
+Plug 'valloric/youcompleteme'
+Plug 'pangloss/vim-javascript'
 call plug#end()
 
 let g:oceanic_next_terminal_bold = 1
@@ -53,19 +62,21 @@ colorscheme OceanicNext
 "colorscheme gruvbox
 "let g:gruvbox_contrast_dark = "hard"
 
+let g:javascript_plugin_jsdoc = 1
+
 let g:airline_powerline_fonts = 1
 let g:NERDTreeIndicatorMapCustom = {
-	    \ "Modified"  : "✹",
-	    \ "Staged"    : "✚",
-	    \ "Untracked" : "✭",
-	    \ "Renamed"   : "➜",
-	    \ "Unmerged"  : "═",
-	    \ "Deleted"   : "",
-	    \ "Dirty"     : "✗",
-	    \ "Clean"     : "✔︎",
-	    \ 'Ignored'   : '☒',
-	    \ "Unknown"   : "?"
-	    \ }
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \}
 
 let g:gitgutter_sign_added = '✚'
 let g:gitgutter_sign_modified = '✹'
