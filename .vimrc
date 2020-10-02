@@ -105,7 +105,7 @@ nmap <Leader>u :UndotreeToggle<CR>
 
 nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
-nmap <Leader>q! :q!<CR>
+nmap <Leader>qq :q!<CR>
 nmap <Leader>x :x<CR>
 
 " run python3 script
