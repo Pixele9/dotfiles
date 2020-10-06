@@ -58,6 +58,7 @@ Plug 'mbbill/undotree'
 Plug 'valloric/youcompleteme'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'turbio/bracey.vim'
 call plug#end()
 
 let g:oceanic_next_terminal_bold = 1
@@ -65,6 +66,8 @@ let g:oceanic_next_terminal_italic = 0
 colorscheme OceanicNext
 "colorscheme gruvbox
 "let g:gruvbox_contrast_dark = "hard"
+
+let g:airline_extensions = [] 
 
 let g:javascript_plugin_jsdoc = 1
 
@@ -88,11 +91,18 @@ let g:gitgutter_sign_removed = '-'
 let g:gitgutter_sign_removed_first_line = '-'
 let g:gitgutter_sign_modified_removed = '-'
 
+let g:bracey_refresh_on_save = 1
+
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key=','
+let g:user_emmet_leader_key='<C-Z>'
+
 
 let NERDTreeQuitOnOpen=1
 let g:NERDTrimTrailingWhitespace = 1
 
-let mapleader=" "
+let mapleader= " "
 
 " Shortcuts
 nmap <Leader>s <Plug>(easymotion-s2)
@@ -103,8 +113,8 @@ nmap <Leader>c :NERDCommenterToggle<CR>
 nmap <Leader>p <C-p>
 nmap <Leader>u :UndotreeToggle<CR>
 
-nmap <Leader>w :w<CR>
 nmap <Leader>q :q<CR>
+nmap <Leader>w :w<CR>
 nmap <Leader>qq :q!<CR>
 nmap <Leader>x :x<CR>
 
@@ -118,3 +128,7 @@ nmap <Leader>vh :split<CR>
 " change window size horizontal
 nmap <Leader>h :20winc <<CR>
 nmap <Leader>l :20winc ><CR>
+
+map <Leader>bs :Bracey<CR>
+map <Leader>bs :BraceyStop<CR>
+map <Leader>br :BraceyReload<CR>
