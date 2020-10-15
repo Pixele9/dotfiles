@@ -120,7 +120,7 @@ nmap <Leader>x :x<CR>
 
 " run python3 script
 nmap ,l :!python3 %<CR>
-nmap ,ñ :!node %<CR>
+nmap ,ñ :!nodemon %<CR>
 " split vertical
 nmap <Leader>vs :vsplit<CR>
 " split horizontal
