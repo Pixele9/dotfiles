@@ -118,6 +118,7 @@ nmap <Leader>w :w<CR>
 nmap <Leader>qq :q!<CR>
 nmap <Leader>x :x<CR>
 
+nmap <Leader>tn :tabnew ./<CR>
 " run python3 script
 nmap ,l :!python3 %<CR>
 nmap ,ñ :!nodemon %<CR>
