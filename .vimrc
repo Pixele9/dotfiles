@@ -1,5 +1,5 @@
 set nu rnu
-set mouse=a
+set mouse=a 
 set numberwidth=1
 set clipboard=unnamed
 set showcmd
@@ -21,11 +21,23 @@ syntax on
 set autoindent
 " show existing tab with 4 spaces width
 set tabstop=4
+" indentation stuff
+filetype indent on
+set ai
+set si
+
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
 " On pressing tab, insert 4 spaces
 set expandtab
+" Use the right font for MacVIM icons
+set guifont=MesloLGS\ NF:h12
 
+" set handlebars syntax to HTML
+au BufReadPost *.hbs set syntax=html
+au BufReadPost *.handlebars set syntax=html
+au BufNewFile,BufRead,BufReadPost *.hbs set syntax=html
+au BufNewFile,BufRead,BufReadPost *.handlebars set syntax=html
 
 call plug#begin('~/.vim/plugged')
 " Themes
@@ -72,6 +84,14 @@ let g:airline_extensions = []
 let g:javascript_plugin_jsdoc = 1
 
 let g:airline_powerline_fonts = 1
+let g:airline#extensions#hunks#enabled=0
+let g:airline#extensions#branch#enabled=1
+
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -96,7 +116,10 @@ let g:bracey_refresh_on_save = 1
 let g:user_emmet_install_global = 0
 autocmd FileType html,css EmmetInstall
 let g:user_emmet_leader_key=','
-let g:user_emmet_leader_key='<C-Z>'
+"let g:user_emmet_leader_key='<C-Z>'
+
+" Read .svelte files as html
+au! BufNewFile,BufRead *.svelte set ft=html
 
 
 let NERDTreeQuitOnOpen=1
@@ -130,6 +153,18 @@ nmap <Leader>vh :split<CR>
 nmap <Leader>h :20winc <<CR>
 nmap <Leader>l :20winc ><CR>
 
-map <Leader>bs :Bracey<CR>
-map <Leader>bs :BraceyStop<CR>
-map <Leader>br :BraceyReload<CR>
+nmap <Leader>b :Bracey<CR>
+nmap <Leader>bs :BraceyStop<CR>
+nmap <Leader>br :BraceyReload<CR>
+
+filetype indent off
+function F_ind()
+   let n_ind = indent(line('.'))
+   let n_col = col('.') - 1
+   if n_col > n_ind
+      return "\n" . repeat("\t", n_ind / 3)
+   else
+      return "\n" . repeat("\t", n_col / 3)
+   endif
+endfunction
+imap <expr> <CR> F_ind()
