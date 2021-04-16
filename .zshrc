@@ -118,6 +118,8 @@ export NVM_DIR="$HOME/.nvm"
 
 alias dev='/Users/andresleal/Documents/Development'
 alias py='/Users/andresleal/Documents/Development/Python'
+alias urv='/Users/andresleal/Documents/Entrepreneurship/URVAN'
+
 source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -125,3 +127,12 @@ source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme
 
 # my git bare for dotfiles
 alias config='/usr/local/bin/git --git-dir=/Users/andresleal/dotfiles/ --work-tree=/Users/andresleal'
+alias sl='cd /Users/andresleal/Documents/Development/sl_on_touchbar && ./sl'
+
+# Exports for React Native
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export "PATH=~/Library/Android/sdk/platform-tools:$PATH"
